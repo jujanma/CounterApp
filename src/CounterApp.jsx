@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import PropTypes from "prop-types";
 
 export const CounterApp = ({ value }) => {
+  console.log("Render");
   const [counter, setCounter] = useState(value);
   const handleAdd = () => {
     setCounter(counter + 1);
@@ -10,7 +11,7 @@ export const CounterApp = ({ value }) => {
   const handleSubstract = () => {
     setCounter(counter - 1);
   };
-  const reset = () => {
+  const handleReset = () => {
     setCounter(value);
   };
 
@@ -20,7 +21,7 @@ export const CounterApp = ({ value }) => {
       <h2>{counter}</h2>
       <button onClick={handleAdd}>+1</button>
       <button onClick={handleSubstract}>-1</button>
-      <button onClick={reset}>Reset</button>
+      <button onClick={handleReset}>Reset</button>
     </>
   );
 };
